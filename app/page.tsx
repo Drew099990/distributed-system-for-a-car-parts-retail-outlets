@@ -9,7 +9,7 @@ export default function Home() {
   return (
    <div>
     <div className="flex flex-row bg-blue-100 text-blue-700">
-      <div className="flex-col  flex justify-center items-center flex-3/4 ">
+      <div className="flex-col mt-90 flex justify-center items-center flex-3/4 ">
      
       <h1 style={{fontFamily:"serif",}}
       className="text-6xl flex flex-row flex-nowrap font-bold italic shadow-2xs ">
