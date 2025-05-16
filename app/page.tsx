@@ -9,28 +9,34 @@ export default function Home() {
   return (
    <div>
     <div className="flex flex-row bg-blue-100 text-blue-700">
-      <div className="flex-col mt-90 flex justify-center items-center flex-3/4 ">
+      <div className="flex-col mt-65 flex justify-center items-center flex-3/4 ">
      
       <h1 style={{fontFamily:"serif",}}
-      className="text-6xl flex flex-row flex-nowrap font-bold italic shadow-2xs ">
+      className="text-6xl flex flex-row flex-nowrap font-bold italic shadow-2xs text-[#406FE6FF] ">
         warm wheels auto parts 
         <GiCartwheel className="text-8xl ml-2 text-[#3f548b]"></GiCartwheel>
         </h1>
 
       <p className="text-[#2f406b]"
       style={{fontFamily:"cursive"}}> 
-      -its not broken just bent
+      -its not broken just bent, stood true since 1967-
       </p>
 
-<a href="login" className="mt-30 hover:bg-blue-300 hover:border-[#2f406b] hover:px-6 transition duration-400 hover:border-4 hover:text-blue-600 bottom-40 r ring-blue-300 ring-2 px-8 py-1 border-2 rounded-2xl animate-bounce">
-  login now!</a>
+<a href="login" className="mt-30 hover:after:content-['🚗-']
+hover:after:ml-0.5
+hover:after:border-2
+hover:after:border-blue-500
+hover:after:rounded-2xl
+hover:after:animate-ping
+hover:after:text-read-800  hover:bg-blue-300 hover:border-[#2f406b] hover:pr-0.5 transition duration-400 hover:border-4 hover:text-blue-600 bottom-40 r ring-blue-300 ring-2 px-8 py-1 border-2 rounded-2xl animate-bounce">
+  login now </a>
 
   
       </div>
 
       <div  className=" "
       ><Image 
-      className="mt-10 border-2 h-130 border-blue-200 shadow-xl opacity-80 rounded-bl-[30%]  "
+      className="mt-10 border-2 h-130 border-blue-200 shadow-xl opacity-85 rounded-bl-[30%]  "
      alt="heart made of hearts" 
       src={img}></Image>
 
@@ -41,28 +47,41 @@ export default function Home() {
   
   
   
-      <Image 
-   className="rounded-[40%] border-2 opacity-75 border-blue-400 shadow-4xs shadow-green-300"
+      <div className="flex-col text-blue-300 justify-center items-center">
+        <Image 
+   className="rounded-[40%] mb-1  border-2 opacity-75 border-blue-400 shadow-4xs shadow-green-300"
      alt="heart made of hearts" 
       src={img2}
       width={100}
-      height={300}></Image>
+      height={100}></Image>
+      andrew muyunda
+      
+      </div>
       
       
-      <Image 
-     className="rounded-[40%] border-2 opacity-75 border-blue-300 shadow-2xs shadow-green-300"
+      <div className="flex-col text-blue-300 justify-center items-center">
+        <Image 
+   className="rounded-[40%] border-2 opacity-75 border-blue-400 shadow-4xs shadow-green-300"
      alt="heart made of hearts" 
       src={img3}
-      width={100}
-      height={300}></Image>
+      width={120}
+      height={120}></Image>
+      <p className="pl-5 py-2.5">202203202</p>
+      
+      </div>
       
       
-      <Image 
-      className="rounded-[40%] border-2 opacity-75 border-dotted border-blue-400 shadow-2xs shadow-amber-200"
+     <div className="flex-col text-blue-300 justify-center items-center">
+        <Image 
+   className="rounded-[40%] mt-3.5 mb-1 border-2 opacity-75 border-blue-400 shadow-4xs shadow-green-300"
      alt="heart made of hearts" 
       src={img4}
-      width={100}
-      height={300}></Image>
+      width={125}
+      height={140}></Image>
+      computer science
+      
+      </div>
+
       </div>
       
   </div>

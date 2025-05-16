@@ -15,7 +15,7 @@ const Login = () => {
       
       <div className='border w-[60vw] h-[65vh]'>
 
-<form className='flex-col flex justify-between p-4'>
+<form action="api" method='POST' className='flex-col flex justify-between p-4'>
      <div className="text-blue-800 justify-center border-2 rounded-[30%] m-8 p-2 text-3xl border-blue-100  flex-row flex spacing-x-4">
       <GiAutoRepair className=" mr-1.5 text-3xl animate-button_hinge"/>  
       WWAP </div>
@@ -24,13 +24,13 @@ const Login = () => {
   <input 
   placeholder='eg. andrewmmuyunda777@gmai...'
   type="email" 
-  className='my-2 border-2 rounded-2xl px-4'></input>
+  className='my-2 border-2 rounded-2xl px-4 h-8'></input>
   
   <label className='spacing-x-4 flex-row flex' ><RiLockPasswordLine className='mx-2'/>Password:</label>
   <input 
   type="password" 
   placeholder='********'
-  className='my-2 border-2 rounded-2xl px-4'></input>
+  className='my-2 border-2 rounded-2xl px-4 h-8'></input>
   
  
    

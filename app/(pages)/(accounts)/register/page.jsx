@@ -35,7 +35,7 @@ const Register = () => {
   <input 
   type="image" 
   placeholder='upload profile picture'
-  className='my-2 border-2 rounded-2xl px-4'></input>
+  className='my-2 border-2 rounded-2xl px-4 '></input>
   
    <label className='spacing-x-4 flex-row flex' ><MdPersonOutline className='mx-2 w-4.5 h-4.5'/> Full name:</label >
   <input 
