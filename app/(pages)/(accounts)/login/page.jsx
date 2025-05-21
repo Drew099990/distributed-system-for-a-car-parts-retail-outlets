@@ -6,7 +6,7 @@ import { RiLockPasswordLine } from 'react-icons/ri'
 import { MdOutlineAttachEmail } from 'react-icons/md'
 const Login = () => {
   return (
-  <div className='text-blue-800 flex justify-center items-center h-[90vh]'>
+  <div className='text-blue-800 bg-blue-50 flex justify-center items-center h-[90vh]'>
     <div className='border-[2.3px] rounded-2xl ring-4 shadow-2xl ring-blue-200 w-[60vw] overflow-hidden  h-[65vh] flex mt-15'>
       <Image className='border w-[50%] h-[100%] opacity-95'  
       alt="login" 

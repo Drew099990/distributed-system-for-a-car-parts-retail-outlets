@@ -10,16 +10,16 @@ const Payment = () => {
     <h1 className='text-3xl font-bold underline text-[#6676A2FF]'>record transaction</h1> 
 
        <label className=' text-[#5A74B6FF]'>Customer name</label>
-   <input type='text'className='border rounded-2xl'></input>
+   <input name='customer' type='text'className='border rounded-2xl'></input>
 
       <label className=' text-[#5A74B6FF]'>itemID</label>
-   <input type='text'className='border rounded-2xl'></input>
+   <input name='itemID' type='text'className='border rounded-2xl'></input>
 
       <label className=' text-[#5A74B6FF]'>quantity</label>
-   <input type='text'className='border rounded-2xl'></input>
+   <input name='quantity' type='text'className='border rounded-2xl'></input>
    
 <label className=' text-[#5A74B6FF]'>payment method</label>
-      <select className='border rounded-2xl w-50 h-7 text-2xs text-[#5A74B6FF] pl-4'>
+      <select name='method' className='border rounded-2xl w-50 h-7 text-2xs text-[#5A74B6FF] pl-4'>
 <option>cash</option>
 <option>card</option>
 <option>mobile money</option>

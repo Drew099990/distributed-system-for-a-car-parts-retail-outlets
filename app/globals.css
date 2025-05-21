@@ -13,7 +13,7 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
   --animate-button_hinge: hinge 4s alternate  2s ease-in-out infinite ;
-
+  --animate-blink : blink 2s alternate ease-in-out infinite ;
   @keyframes hinge {
     
     50% {
@@ -22,12 +22,14 @@
       
     }
     
-   
-      
-      
-        
-      
     
+    }
+
+    @keyframes blink {
+      50%{
+        opacity:0.9;
+        transform: Scale(1.08)
+      }
     }
 }
 

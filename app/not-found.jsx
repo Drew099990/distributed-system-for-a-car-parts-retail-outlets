@@ -3,7 +3,14 @@ import img from "./assets/not.jpg"
 import Image from 'next/image'
 import { GiAutoRepair } from 'react-icons/gi'
 import Link from 'next/link'
-
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
 
 const not_found = () => {
   return (

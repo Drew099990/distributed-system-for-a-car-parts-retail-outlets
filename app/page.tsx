@@ -22,34 +22,34 @@ export default function Home() {
       -its not broken just bent, stood true since 1967-
       </p>
 
-<a href="login" className="mt-30 hover:after:content-['🚗-']
+<a href="home" className="mt-30 hover:after:content-['🚗-']
 hover:after:ml-0.5
 hover:after:border-2
 hover:after:border-blue-500
 hover:after:rounded-2xl
 hover:after:animate-ping
 hover:after:text-read-800  hover:bg-blue-300 hover:border-[#2f406b] hover:pr-0.5 transition duration-400 hover:border-4 hover:text-blue-600 bottom-40 r ring-blue-300 ring-2 px-8 py-1 border-2 rounded-2xl animate-bounce">
-  login now </a>
+  get started </a>
 
   
       </div>
 
       <div  className=" "
       ><Image 
-      className="mt-10 border-2 h-130 border-blue-200 shadow-xl opacity-85 rounded-bl-[30%]  "
+      className="mt-10 border-2 h-130 border-blue-200 shadow-xl  opacity-85 rounded-bl-[30%]  "
      alt="heart made of hearts" 
       src={img}></Image>
 
-<div className="flex border-l-blue-300 rounded-tl-4xl border-dotted border flex-col justify-center items-center my-2">
-    <h1 className="text-blue-400">founders</h1>
+<div className="flex border-l-blue-300 rounded-tl-4xl  border-dotted border flex-col justify-center items-center my-2">
+    <h1 className="text-blue-700 opacity-70">founders</h1>
 
       <div className="flex mb-3  space-x-10 flex-row justify-center item-center"> 
   
   
   
-      <div className="flex-col text-blue-300 justify-center items-center">
+      <div className="flex-col text-blue-900 opacity-70 justify-center items-center">
         <Image 
-   className="rounded-[40%] mb-1  border-2 opacity-75 border-blue-400 shadow-4xs shadow-green-300"
+   className="rounded-[40%] mb-1  border-2  border-blue-400 shadow-4xs shadow-green-300"
      alt="heart made of hearts" 
       src={img2}
       width={100}
@@ -59,9 +59,9 @@ hover:after:text-read-800  hover:bg-blue-300 hover:border-[#2f406b] hover:pr-0.5
       </div>
       
       
-      <div className="flex-col text-blue-300 justify-center items-center">
+      <div className="flex-col text-blue-900 opacity-70 justify-center items-center">
         <Image 
-   className="rounded-[40%] border-2 opacity-75 border-blue-400 shadow-4xs shadow-green-300"
+   className="rounded-[40%] border-2 border-blue-400 shadow-4xs shadow-green-300"
      alt="heart made of hearts" 
       src={img3}
       width={120}
@@ -71,9 +71,9 @@ hover:after:text-read-800  hover:bg-blue-300 hover:border-[#2f406b] hover:pr-0.5
       </div>
       
       
-     <div className="flex-col text-blue-300 justify-center items-center">
+     <div className="flex-col text-blue-900 opacity-70 justify-center items-center">
         <Image 
-   className="rounded-[40%] mt-3.5 mb-1 border-2 opacity-75 border-blue-400 shadow-4xs shadow-green-300"
+   className="rounded-[40%] mt-3.5 mb-1 border-2  border-blue-400 shadow-4xs shadow-green-300"
      alt="heart made of hearts" 
       src={img4}
       width={125}
