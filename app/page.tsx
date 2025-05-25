@@ -8,7 +8,7 @@ import { GiCartwheel } from "react-icons/gi";
 export default function Home() {
   return (
    <div>
-    <div className="flex flex-row bg-blue-100 text-blue-700">
+    <div className="flex flex-row bg-gradient-to-t via-blue-100 from-blue-300 to-blue-50 text-blue-700">
       <div className="flex-col mt-65 flex justify-center items-center flex-3/4 ">
      
       <h1 style={{fontFamily:"serif",}}
@@ -40,44 +40,46 @@ hover:after:text-read-800  hover:bg-blue-300 hover:border-[#2f406b] hover:pr-0.5
      alt="heart made of hearts" 
       src={img}></Image>
 
-<div className="flex border-l-blue-300 rounded-tl-4xl  border-dotted border flex-col justify-center items-center my-2">
-    <h1 className="text-blue-700 opacity-70">founders</h1>
+<h1 className="fixed bottom-40 right-10 text-blue-900 opacity-70 underline animate-pulse hover:text-0.1 ">show founders> </h1>
 
+<div className="flex border-l-blue-300 rounded-tl-4xl transition duration-1000  opacity-0 hover:opacity-85 mb-6 border-dotted border flex-col justify-center items-center my-2">
+    <h1 className="text-blue-700 opacity-70">founders</h1>
+/
       <div className="flex mb-3  space-x-10 flex-row justify-center item-center"> 
   
   
   
-      <div className="flex-col text-blue-900 opacity-70 justify-center items-center">
+      <div className="flex-col text-[#212131] opacity-70 justify-center items-center">
         <Image 
    className="rounded-[40%] mb-1  border-2  border-blue-400 shadow-4xs shadow-green-300"
      alt="heart made of hearts" 
       src={img2}
-      width={100}
-      height={100}></Image>
+      width={90}
+      height={90}></Image>
       andrew muyunda
       
       </div>
       
       
-      <div className="flex-col text-blue-900 opacity-70 justify-center items-center">
+      <div className="flex-col text-[#212131] opacity-70 justify-center items-center">
         <Image 
    className="rounded-[40%] border-2 border-blue-400 shadow-4xs shadow-green-300"
      alt="heart made of hearts" 
       src={img3}
-      width={120}
-      height={120}></Image>
+      width={110}
+      height={110}></Image>
       <p className="pl-5 py-2.5">202203202</p>
       
       </div>
       
       
-     <div className="flex-col text-blue-900 opacity-70 justify-center items-center">
+     <div className="flex-col text-[#212131] opacity-60 justify-center items-center">
         <Image 
    className="rounded-[40%] mt-3.5 mb-1 border-2  border-blue-400 shadow-4xs shadow-green-300"
      alt="heart made of hearts" 
       src={img4}
-      width={125}
-      height={140}></Image>
+      width={120}
+      height={130}></Image>
       computer science
       
       </div>

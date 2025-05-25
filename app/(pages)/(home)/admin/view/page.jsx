@@ -8,7 +8,7 @@ function StudentList() {
     useEffect(() => {
         async function fetchPayments() {
             try {
-                const response = await fetch('/outlet');
+                const response = await fetch('/warehousestorage');
                 const data = await response.json(); // No need to destructure here
                 setPayments(data); // Set the array of Payments directly
             } catch (error) {

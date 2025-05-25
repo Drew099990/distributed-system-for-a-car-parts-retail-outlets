@@ -1,12 +1,16 @@
 export {}
 
 // Create a type for the roles
-export type Roles = 'admin' | 'warehouse' | 'retail'
+export type Roles = 'admin'  | "manager"
+export type warehouse = 'warehouse'
+export type normal = "outlet"
 
 declare global {
   interface CustomJwtSessionClaims {
     metadata: {
-      role?: Roles
+      manager?: Roles,
+      warehouse?: warehouse
+      ,normal?:normal
     }
   }
 }

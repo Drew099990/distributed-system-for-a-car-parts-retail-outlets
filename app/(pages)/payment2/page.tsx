@@ -1,4 +1,5 @@
 "use client"; 
+import { redirect } from 'next/navigation';
 import React, { useState } from 'react';
 import { GiAutoRepair } from 'react-icons/gi';
 
@@ -15,7 +16,7 @@ const Payment: React.FC = () => {
     setMessage('');
 
     try {
-      const response = await fetch("/outlet", {
+      const response = await fetch("/warehousestorage", {
         method: "POST",
         body: JSON.stringify({
           customer: customerName,
@@ -37,6 +38,7 @@ const Payment: React.FC = () => {
       setMessage(`Error: ${error.message}`);
     } finally {
       setLoading(false);
+      redirect("warehouse/view")
     }
   };
 

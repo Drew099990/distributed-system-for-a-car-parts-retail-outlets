@@ -11,6 +11,7 @@ const ItemCard = ({ imgSrc, title, altText }) => (
   <div className='flex flex-col w-[20vw] opacity-90 bg-blue-900 text-white border-2 p-4 rounded-2xl border-blue-900 justify-around items-center mx-2'>
     <Image className='rounded-2xl ' src={imgSrc} alt={altText} width={200} height={200} />
     <h3 className='text-lg'>{title}</h3>
+    <h4>price</h4>
   </div>
 );
 

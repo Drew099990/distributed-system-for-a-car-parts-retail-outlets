@@ -38,7 +38,7 @@ export default function RootLayout({
     >
       <html lang="en">
         <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-           <header className="bg-[#2f406b] z-20 w-full fixed top-0 border-b-2 border-blue-400 p-4 items-center-safe space-x-3 flex justify-end h-[5rem]" >
+           <header className="bg-[#2f406b] z-20 w-full fixed top-0 border-b-2  border-blue-100 p-4 items-center-safe space-x-3 flex justify-end h-[5rem]" >
             <SignedOut >
             <div  className='border rounded-2xl px-4 text-blue-200 hover:bg-blue-950'> 
                <SignInButton forceRedirectUrl="home/" mode='modal' >

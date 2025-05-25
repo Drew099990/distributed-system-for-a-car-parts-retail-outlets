@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { GiAutoRepair } from 'react-icons/gi';
 
-const Payment: React.FC = () => {
+const Pricer: React.FC = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [message, setMessage] = useState<string>('');
 
@@ -18,7 +18,6 @@ const Payment: React.FC = () => {
       const response = await fetch("/outlet", {
         method: "POST",
         body: JSON.stringify({
-          customer: customerName,
           itemID: formdata.get("itemID"),
           quantity: formdata.get("quantity"),
           method: formdata.get("method"),
@@ -46,20 +45,14 @@ const Payment: React.FC = () => {
         onSubmit={submit} 
         className='bg-blue-100 border-2 mt-30 border-[#2f406b] shadow-xl  rounded-lg p-8 w-96 space-y-2'
       >
-        <div className="flex items-center space-x-2">
+        <div className="flex items-center space-y-4">
           <GiAutoRepair className="text-4xl text-blue-900" />
           <h1 className='text-2xl font-bold text-blue-900'>WWAP</h1>
         </div>
           
-        <h2 className='text-xl font-semibold text-gray-700'>Record Transaction</h2> 
+        <h2 className='text-xl font-semibold text-gray-700'>set price</h2> 
 
-        <label className='block text-gray-600'>Customer Name</label>
-        <input 
-          name='customer' 
-          type='text' 
-          className='border border-gray-300 rounded-md p-2 w-full' 
-          required 
-        />
+   
 
         <label className='block text-gray-600'>Item ID</label>
         <input 
@@ -77,7 +70,7 @@ const Payment: React.FC = () => {
           required 
         />
 
-        <label className='block text-gray-600'>Payment Method</label>
+        <label className='block text-gray-600'>Pricer Method</label>
         <select 
           name='method' 
           className='border border-gray-300 rounded-md p-2 w-full'
@@ -101,4 +94,4 @@ const Payment: React.FC = () => {
   );
 };
 
-export default Payment;
+export default Pricer;
