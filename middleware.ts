@@ -12,7 +12,7 @@ export default clerkMiddleware(async (auth, req ) => {
 
 if(!isNotProtected(req)){
 
-return NextResponse.redirect(new URL("/Signin",req.url))
+// await auth.protect()
 }
 
   if (isprotected(req) && ((await auth()).sessionClaims?.metadata?.manager !== "admin")){

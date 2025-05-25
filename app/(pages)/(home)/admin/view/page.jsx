@@ -1,41 +1,76 @@
 "use client";
+import { useState, useEffect } from 'react';
+import React from 'react';
 
-import React, { useEffect, useState } from 'react';
+const Summary = () => {
+  const [outletPayments, setOutletPayments] = useState([]);
+  const [warehousePayments, setWarehousePayments] = useState([]);
 
-function StudentList() {
-    const [Payments, setPayments] = useState([]);
-
-    useEffect(() => {
-        async function fetchPayments() {
-            try {
-                const response = await fetch('/warehousestorage');
-                const data = await response.json(); // No need to destructure here
-                setPayments(data); // Set the array of Payments directly
-            } catch (error) {
-                console.error('Error fetching data:', error);
-            }
+  useEffect(() => {
+    async function fetchOutletPayments() {
+      try {
+        const response = await fetch('/outlet');
+        if (!response.ok) {
+          throw new Error('Failed to fetch data from /outlet');
         }
+        const data = await response.json();
+        setOutletPayments(data);
+      } catch (error) {
+        console.error('Error fetching outlet data:', error);
+      }
+    }
 
-        fetchPayments();
-    }, []);
+    fetchOutletPayments();
+  }, []);
 
-    return (
-       <div className='flex justify-center items-center text-blue-950 opacity-90'>
-         <div className="mt-30 w-[70vw] flex-cols justify-center items-center text-4xl">
-            <h1 className='underline font-bold'>Payment Records</h1>
-            <ul>
-                {Payments.map(payment => (
-                    <li className='border p-5 border-blue-700 m-6 text-2xl text-blue-700 rounded-2xl flex flex-col' key={payment.itemID && payment.quantity}> {/* Adjust based on your keys */}
-                       <h1  className='text-blue-900'> Customer Name: {payment.customer}</h1> 
-                       <p className='text-xs'>Item ID: {payment.itemID}</p>
-                       <p  className='text-xs'>Quantity: {payment.quantity}</p>
-                       <p  className='text-xs'>, Method: {payment.method}</p>
-                    </li>
-                ))}
-            </ul>
-        </div>
-       </div>
-    );
-}
+  useEffect(() => {
+    async function fetchWarehousePayments() {
+      try {
+        const response = await fetch('/warehousestorage');
+        if (!response.ok) {
+          throw new Error('Failed to fetch data from /warehousestorage');
+        }
+        const data = await response.json();
+        setWarehousePayments(data);
+      } catch (error) {
+        console.error('Error fetching warehouse data:', error);
+      }
+    }
 
-export default StudentList;
+    fetchWarehousePayments();
+  }, []);
+
+  return (
+    <div className='flex justify-around items-start p-4 w-full h-[90vh]'>
+      <div className='text-blue-800 w-[45%] flex flex-col'>
+        <h1 className='underline font-bold text-2xl mb-4'>Outlet Payment Records</h1>
+        <ul>
+          {outletPayments.map(payment => (
+            <li className='border p-5 border-blue-700 m-2 text-xl text-blue-700 rounded-2xl flex flex-col' key={payment.itemID}>
+              <h2 className='text-blue-900'>Customer Name: {payment.customer}</h2>
+              <p className='text-xs'>Item ID: {payment.itemID}</p>
+              <p className='text-xs'>Quantity: {payment.quantity}</p>
+              <p className='text-xs'>Method: {payment.method}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className='text-blue-800 w-[45%] flex flex-col'>
+        <h1 className='underline font-bold text-2xl mb-4'>Warehouse Payment Records</h1>
+        <ul>
+          {warehousePayments.map(payment => (
+            <li className='border p-5 border-blue-700 m-2 text-xl text-blue-700 rounded-2xl flex flex-col' key={payment.itemID}>
+              <h2 className='text-blue-900'>Customer Name: {payment.customer}</h2>
+              <p className='text-xs'>Item ID: {payment.itemID}</p>
+              <p className='text-xs'>Quantity: {payment.quantity}</p>
+              <p className='text-xs'>Method: {payment.method}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+};
+
+export default Summary;

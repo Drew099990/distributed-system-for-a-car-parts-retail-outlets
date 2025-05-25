@@ -8,15 +8,15 @@ async function AdminPanel() {
 
     return (
         <div className='flex  justify-center items-center h-screen w-full bg-[#2f406b] text-blue-700'>
-            <div className='flex-col gap-5 rounded-2xl border-2 border-double border-[#8c96af] shadow-xl p-6 w-11/12 max-w-3xl flex justify-center items-center'>
+            <div className='animate-slide_u1 flex-col gap-5 rounded-2xl border-2 border-double border-[#8c96af] shadow-xl p-6 w-11/12 max-w-3xl flex justify-center items-center'>
                 <h1 className='text-blue-100 opacity-700 mb-4'>
                     {user ? `[Signed in as ${user.firstName}]` : '[Loading...]'}
                 </h1>
                 <h1 className='text-blue-100 text-2xl mb-5'>WAPP Admin</h1>
-               <NavButton href='/check-outlet-inventories' icon={<FaMoneyBill1Wave />} label='set prices' />
+               <NavButton href='/check-outlet-inventories' icon={<FaMoneyBill1Wave />} label='prices and discounts' />
                 <NavButton href='/payment' icon={<MdPayment />} label='Record Payment' />
                 <NavButton href='/inventory' icon={<MdOutlineInventory2 />} label='Check Warehouse Inventory' />
-                <NavButton href='/check-outlet-inventories' icon={<MdInventory2 />} label='Check Outlet Inventories' />
+                <NavButton href='/inventory' icon={<MdInventory2 />} label='Check Outlet Inventories' />
                 <NavButton href='/summary' icon={<IoReceiptOutline />} label='View Financial Summaries' />
             </div>
         </div>

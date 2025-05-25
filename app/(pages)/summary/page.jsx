@@ -6,6 +6,22 @@ const Summary = () => {
   const [outletPayments, setOutletPayments] = useState([]);
   const [warehousePayments, setWarehousePayments] = useState([]);
 
+
+  useEffect(() => {
+    async function fetchWarehousePayments() {
+      try {
+        const response2 = await fetch('/warehousestorage');
+      
+        const data = await response2.json();
+        setWarehousePayments(data);
+      } catch (error) {
+        console.error('Error fetching warehouse data:', error);
+      }
+    }
+
+    fetchWarehousePayments();
+  }, []);
+
   useEffect(() => {
     async function fetchOutletPayments() {
       try {
@@ -23,22 +39,6 @@ const Summary = () => {
     fetchOutletPayments();
   }, []);
 
-  useEffect(() => {
-    async function fetchWarehousePayments() {
-      try {
-        const response = await fetch('/warehousestorage');
-        if (!response.ok) {
-          throw new Error('Failed to fetch data from /warehousestorage');
-        }
-        const data = await response.json();
-        setWarehousePayments(data);
-      } catch (error) {
-        console.error('Error fetching warehouse data:', error);
-      }
-    }
-
-    fetchWarehousePayments();
-  }, []);
 
   return (
     <div className='flex bg-blue-100 justify-around items-start p-4 w-full h-fit '>
@@ -46,7 +46,7 @@ const Summary = () => {
         <h1 className='underline font-bold text-2xl mb-4  text-blue-900 opacity-80'>Outlet paymment summary</h1>
         <ul>
           {outletPayments.map(payment => (
-            <li className='border p-5 border-blue-700 m-2 text-xl text-blue-700 rounded-2xl flex flex-col' key={payment.itemID && payment.customer}>
+            <li className='border p-5 border-blue-700 m-2 text-xl text-blue-700 rounded-2xl flex flex-col' key={payment.itemID &&Math.random()}>
               <h2 className='text-blue-900'>Customer Name: {payment.customer}</h2>
               <p className='text-xs'>Item ID: {payment.itemID}</p>
               <p className='text-xs'>Quantity: {payment.quantity}</p>
@@ -60,7 +60,7 @@ const Summary = () => {
         <h1 className='underline font-bold text-2xl mb-4 text-blue-900 opacity-80'>Warehouse Payment summary</h1>
         <ul>
           {warehousePayments.map(payment => (
-            <li className='border p-5 border-blue-700 m-2 text-xl text-blue-700 rounded-2xl flex flex-col' key={payment.itemID}>
+            <li className='border p-5 border-blue-700 m-2 text-xl text-blue-700 rounded-2xl flex flex-col' key={payment.itemID &&Math.random()}>
               <h2 className='text-blue-900'>Customer Name: {payment.customer}</h2>
               <p className='text-xs'>Item ID: {payment.itemID}</p>
               <p className='text-xs'>Quantity: {payment.quantity}</p>

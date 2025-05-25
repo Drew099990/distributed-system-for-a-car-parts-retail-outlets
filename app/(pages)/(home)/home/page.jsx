@@ -6,7 +6,7 @@ export default async function Home() {
 
   return (
     <div className='flex justify-center items-center h-screen w-full bg-[#2f406b] text-blue-900'>
-      <div className='flex-col gap-5 border-8 border-double border-[#8c96af] shadow-xl p-6 w-11/12 max-w-3xl flex justify-center items-center'>
+      <div className=' animate-slide_u1 flex-col gap-5 border-8 border-double border-[#8c96af] shadow-xl p-6 w-11/12 max-w-3xl flex justify-center items-center'>
         <h1 className='text-blue-900 opacity-700 mb-4'>
           [{user ? `Signed in as ${user.firstName}` : 'Loading...'}]
         </h1>

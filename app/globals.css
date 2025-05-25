@@ -14,6 +14,44 @@
   --font-mono: var(--font-geist-mono);
   --animate-button_hinge: hinge 4s alternate  2s ease-in-out infinite ;
   --animate-blink : blink 2s alternate ease-in-out infinite ;
+  --animate-down_slide : dSlide 6s ease-in ;
+  --animate-fade-in: fade_in 2s ease-in;
+  --animate-slide-right: right 10s ease-in;
+  --animate-slide_u1:fade_in2 1s ease-in;
+  --animate-slide_r1:right 2s ease-in;
+   --animate-slide_r2:right 3s ease-in;
+    --animate-slide_r3:right 4s ease-in;
+    --animate-slide_r4:right 5s ease-in;
+
+  @keyframes right {
+    from{
+      opacity: 0;
+      transform:translate(100,0)
+    }
+  }
+
+@keyframes fade_in {
+  from{
+    opacity: 0;
+  }
+}
+
+@keyframes fade_in2 {
+  from{
+    opacity: 0;
+    transform:translate(0,50)
+  }
+}
+
+
+@keyframes dSlide {
+from{
+  transform:translate(0,-500)
+}
+
+
+}
+
   @keyframes hinge {
     
     50% {

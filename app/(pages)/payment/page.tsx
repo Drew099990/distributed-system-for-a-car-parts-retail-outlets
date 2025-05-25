@@ -44,7 +44,7 @@ const Payment: React.FC = () => {
     <div className='flex justify-center items-center h-screen bg-gradient-to-b from-blue-100 to-blue-200'>
       <form 
         onSubmit={submit} 
-        className='bg-blue-100 border-2 mt-30 border-[#2f406b] shadow-xl  rounded-lg p-8 w-96 space-y-2'
+        className='animate-slide_u1 bg-blue-100 border-2 mt-30 border-[#2f406b] shadow-xl  rounded-lg p-8 w-96 space-y-2'
       >
         <div className="flex items-center space-x-2">
           <GiAutoRepair className="text-4xl text-blue-900" />
