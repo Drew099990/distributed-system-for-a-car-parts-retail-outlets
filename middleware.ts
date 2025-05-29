@@ -2,38 +2,43 @@ import { clerkMiddleware ,createRouteMatcher} from '@clerk/nextjs/server'
 import { redirect } from 'next/dist/server/api-utils';
 import { NextResponse } from 'next/server';
 import { SignInButton } from '@clerk/nextjs';
+import { url } from 'inspector';
 
 const isNotProtected = createRouteMatcher("/");
-const isManager = createRouteMatcher("/home(.*)");
+const isHome = createRouteMatcher("/home(.*)");
 const isWarehouse = createRouteMatcher("/warehouse(.*)");
 const isprotected = createRouteMatcher("/admin(.*)");
+
 
 export default clerkMiddleware(async (auth, req ) => {
 
 if(!isNotProtected(req)){
 
-// await auth.protect()
+ await auth.protect()
 }
 
-  if (isprotected(req) && ((await auth()).sessionClaims?.metadata?.manager !== "admin")){
-    const url = new URL("/home", req.url)
+  if (isprotected(req)  && ((await auth()).sessionClaims?.metadata?.manager !== "admin")){
+    const url = new URL("/", req.url)
     return NextResponse.redirect(url)
    }
 
-  if (isWarehouse(req) && ((await auth()).sessionClaims?.metadata?.warehouse !== "warehouse")){
-    const url = new URL("/home", req.url)
+  if (isWarehouse(req) && ((await auth()).sessionClaims?.metadata?.manager !==  "admin"    ) && ((await auth()).sessionClaims?.metadata.warehouse !== "warehouse")){
+    const url = new URL("/", req.url)
     return NextResponse.redirect(url)
   }
 
+  
 
-  if (isManager(req) && (await auth()).sessionClaims?.metadata?.manager == 'admin') {
+
+  if (isHome(req) && (await auth()).sessionClaims?.metadata?.manager == 'admin') {
     const url = new URL('/admin', req.url)
     return NextResponse.redirect(url)
-  }
-  else if (isManager(req) && (await auth()).sessionClaims?.metadata?.warehouse == 'warehouse') {
-    const url = new URL('/warehouse', req.url)
+  }else if(isHome(req) && ((await auth()).sessionClaims?.metadata.warehouse == "warehouse"))
+  {
+     const url = new URL("/warehouse", req.url)
     return NextResponse.redirect(url)
   }
+
   }
 );
 export const config = {

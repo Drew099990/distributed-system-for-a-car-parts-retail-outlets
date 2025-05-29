@@ -16,7 +16,7 @@ async function connectToDatabase() {
 export async function GET(request: NextRequest) {
     try {
         const connection = await connectToDatabase();
-        const [rows] = await connection.query('SELECT * FROM retail2.payments'); // Adjust your table name
+        const [rows] = await connection.query('SELECT * FROM retail2.transaction'); // Adjust your table name
         return NextResponse.json(rows, { status: 200 });
     } catch (error) {
         return NextResponse.json({ error: 'Database error' }, { status: 500 });
@@ -27,9 +27,9 @@ export async function POST(request: NextRequest) {
     try {
         const connection = await connectToDatabase();
         const body = await request.json();
-        const { customer,itemID,quantity,method } = body; // Adjust based on your fields
+        const { customer,itemID,quantity,method } = body; 
 
-        await connection.query('INSERT INTO retail2.payments (customer,itemID,quantity,method) VALUES (?,?,?,?)', [customer,itemID,quantity,method]); // Adjust your query
+        await connection.query('INSERT INTO retail2.transaction (customer,itemID,quantity,method) VALUES (?,?,?,?)', [customer,itemID,quantity,method]); // Adjust your query
         return NextResponse.json({ message: 'Created successfully' }, { status: 201 });
     } catch (error) {
         return NextResponse.json({ error: 'Database error' }, { status: 500 });
@@ -40,7 +40,7 @@ export async function PATCH(request: NextRequest) {
     try {
         const connection = await connectToDatabase();
         const body = await request.json();
-        const { id, name } = body; // Adjust based on your fields
+        const { id, name } = body; 
 
         await connection.query('UPDATE retail2 SET name = ? WHERE id = ?', [name, id]); // Adjust your query
         return NextResponse.json({ message: 'Updated successfully' }, { status: 200 });

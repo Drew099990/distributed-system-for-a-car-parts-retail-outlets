@@ -1,6 +1,7 @@
 
 import { auth, currentUser } from '@clerk/nextjs/server';
 import { redirect } from 'next/navigation';
+import { FaCartFlatbed, FaMoneyBill1Wave } from 'react-icons/fa6';
 import { IoReceiptOutline } from 'react-icons/io5';
 import { MdOutlineInventory2, MdPayment } from 'react-icons/md';
 
@@ -21,15 +22,28 @@ export default async function Warehouse() {
         icon={<MdPayment />} 
         label='Record Payment' />
 
+       
         <NavButton 
         href='/warehouse/view' 
         icon={<IoReceiptOutline />} 
         label='View Payments' />
 
+       
         <NavButton 
-        href='/inventory' 
+        href='/warehouse_inventory' 
         icon={<MdOutlineInventory2 />} 
         label='Check Inventory' />
+
+           <NavButton 
+        href='/restock' 
+        icon={<FaCartFlatbed />} 
+        label='Restock Requests' />
+
+          <NavButton 
+          href='/pricer' 
+          icon={<FaMoneyBill1Wave />} 
+          label='prices and discounts' />
+              
       </div>
     </div>
   );

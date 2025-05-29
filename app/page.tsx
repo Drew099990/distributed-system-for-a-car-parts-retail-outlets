@@ -40,7 +40,7 @@ hover:after:text-read-800  hover:bg-blue-300 hover:border-[#2f406b] hover:pr-0.5
      alt="heart made of hearts" 
       src={img}></Image>
 
-<h1 className="fixed bottom-40 right-10 text-blue-900 opacity-70 underline animate-pulse hover:text-0.1 animate-slide-right">show founders </h1>
+<h1 className="fixed bottom-40 right-10 text-blue-900 opacity-70 underline animate-pulse hover:text-0.1 animate-slide_r3">show founders </h1>
 /
 <div className="flex border-l-blue-300 rounded-tl-4xl transition duration-1000  opacity-0 hover:opacity-85 mb-6 border-dotted border flex-col justify-center items-center my-2">
     <h1 className="text-blue-700 opacity-70">founders</h1>

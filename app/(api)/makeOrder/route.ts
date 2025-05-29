@@ -6,7 +6,7 @@ const connectionParams = {
     port: 3306,
     user: 'root',
     password: '',
-    database: 'warehouse',
+    database: 'order',
 };
 
 async function connectToDatabase() {
@@ -16,10 +16,10 @@ async function connectToDatabase() {
 export async function GET(request: NextRequest) {
     try {
         const connection = await connectToDatabase();
-        const [rows] = await connection.query('SELECT * FROM warehouse.paymentlist'); // Adjust your table name
+        const [rows] = await connection.query('SELECT * FROM order.stocks'); // Adjust your table name
         return NextResponse.json(rows, { status: 200 });
     } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error(error); // Log the error for debugging
         return NextResponse.json({ error: 'Database error' }, { status: 500 });
     }
 }
@@ -28,15 +28,15 @@ export async function POST(request: NextRequest) {
     try {
         const connection = await connectToDatabase();
         const body = await request.json();
-        const { customer, itemID, quantity, method } = body; 
+        const { itemID, quantity} = body; 
 
-        await connection.query(
-            'INSERT INTO warehouse.paymentlist (customer, itemID, quantity, method) VALUES (?, ?, ?, ?)',
-            [customer, itemID, quantity, method] 
-        );
+        await connection.execute(
+            'INSERT INTO stocks (itemID, quantity) VALUES (?, ?)',
+            [itemID, quantity]
+        ); 
         return NextResponse.json({ message: 'Created successfully' }, { status: 201 });
     } catch (error) {
-        console.error('Error creating payment:', error);
+        console.error(error); // Log the error for debugging
         return NextResponse.json({ error: 'Database error' }, { status: 500 });
     }
 }
@@ -45,12 +45,12 @@ export async function PATCH(request: NextRequest) {
     try {
         const connection = await connectToDatabase();
         const body = await request.json();
-        const { id, name } = body; 
+        const { id, name } = body; // Adjust based on your fields
 
-        await connection.query('UPDATE retail2.payments2 SET name = ? WHERE id = ?', [name, id]); // Adjust your query
+        await connection.query('UPDATE order.stocks SET name = ? WHERE id = ?', [name, id]); // Adjust your query
         return NextResponse.json({ message: 'Updated successfully' }, { status: 200 });
     } catch (error) {
-        console.error('Error updating payment:', error);
+        console.error(error); // Log the error for debugging
         return NextResponse.json({ error: 'Database error' }, { status: 500 });
     }
 }
@@ -58,13 +58,9 @@ export async function PATCH(request: NextRequest) {
 export async function DELETE(request: NextRequest) {
     try {
         const connection = await connectToDatabase();
-        const { searchParams } = new URL(request.url);
-        const id = searchParams.get('id');
-
-        await connection.query('DELETE FROM retail2.payments2 WHERE id = ?', [id]); // Adjust your query
-        return NextResponse.json({ message: 'Deleted successfully' }, { status: 204 });
+        await connection.query('TRUNCATE TABLE stocks'); // Adjusted table name
+        return NextResponse.json({ message: 'All records deleted successfully' }, { status: 204 });
     } catch (error) {
-        console.error('Error deleting payment:', error);
-        return NextResponse.json({ error: 'Database error' }, { status: 500 });
     }
 }
+

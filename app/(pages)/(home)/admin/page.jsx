@@ -1,3 +1,4 @@
+
 import { currentUser } from '@clerk/nextjs/server';
 import { FaMoneyBill1Wave } from 'react-icons/fa6';
 import { IoReceiptOutline } from 'react-icons/io5';
@@ -13,10 +14,10 @@ async function AdminPanel() {
                     {user ? `[Signed in as ${user.firstName}]` : '[Loading...]'}
                 </h1>
                 <h1 className='text-blue-100 text-2xl mb-5'>WAPP Admin</h1>
-               <NavButton href='/check-outlet-inventories' icon={<FaMoneyBill1Wave />} label='prices and discounts' />
-                <NavButton href='/payment' icon={<MdPayment />} label='Record Payment' />
-                <NavButton href='/inventory' icon={<MdOutlineInventory2 />} label='Check Warehouse Inventory' />
-                <NavButton href='/inventory' icon={<MdInventory2 />} label='Check Outlet Inventories' />
+               <NavButton href='/pricer' icon={<FaMoneyBill1Wave />} label='prices and discounts' />
+                <NavButton href='/payment2' icon={<MdPayment />} label='Record Payment' />
+                <NavButton href='/warehouse_inventory' icon={<MdOutlineInventory2 />} label='Check Warehouse Inventory' />
+                <NavButton href='/outlet_inventory' icon={<MdInventory2 />} label='Check Outlet Inventories' />
                 <NavButton href='/summary' icon={<IoReceiptOutline />} label='View Financial Summaries' />
             </div>
         </div>
